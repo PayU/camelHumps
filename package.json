@@ -1,0 +1,39 @@
+{
+  "name": "camelHumps",
+  "version": "1.0.0",
+  "description": "Allow accessing object with snake_case property names using camelCase names",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zooz/camelHumps.git"
+  },
+  "keywords": [
+    "object",
+    "camel",
+    "snake",
+    "camel-case",
+    "snake-case"
+  ],
+  "author": "Kobi Carmeli",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Zooz/camelHumps/issues"
+  },
+  "homepage": "https://github.com/Zooz/camelHumps#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "mocha": "^6.1.4",
+    "nyc": "^14.0.0"
+  }
+}
