@@ -1,11 +1,11 @@
 # camelHumps
 
-<!-- [![npm](https://img.shields.io/npm/v/camel-humps.svg)](https://www.npmjs.com/package/camel-humps)
-[![Build Status](https://img.shields.io/travis/Zooz/camel-humps.svg)](https://travis-ci.org/Zooz/camelHumps)
-[![Coverage Status](https://img.shields.io/coveralls/github/Zooz/camelHumps.svg)](https://coveralls.io/github/Zooz/camelHumps?branch=master)
+[![npm](https://img.shields.io/npm/v/camel-humps.svg)](https://www.npmjs.com/package/camel-humps)
+[![Build Status](https://travis-ci.org/Zooz/camelHumps.svg?branch=master)](https://travis-ci.org/Zooz/camelHumps)
+[![Coverage Status](https://coveralls.io/repos/github/Zooz/camelHumps/badge.svg?branch=master)](https://coveralls.io/github/Zooz/camelHumps?branch=master)
 [![Known Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/Zooz/camelHumps.svg)](https://snyk.io/test/github/Zooz/camelHumps?targetFile=package.json)
 ![style](https://img.shields.io/badge/code%20style-airbnb-ff5a5f.svg)
-![NPM](https://img.shields.io/npm/l/camelHumps.svg) -->
+![NPM](https://img.shields.io/npm/l/camel-humps.svg)
 
 Allow accessing object with snake_case property names using camelCase property names
 
