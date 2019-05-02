@@ -1,11 +1,11 @@
-# camel-humps
+# camelHumps
 
-<!-- [![npm](https://img.shields.io/npm/v/api-contract-validator.svg)](https://www.npmjs.com/package/api-contract-validator)
-[![Build Status](https://img.shields.io/travis/Zooz/api-contract-validator.svg)](https://travis-ci.org/Zooz/api-contract-validator)
-[![Coverage Status](https://img.shields.io/coveralls/github/Zooz/api-contract-validator.svg)](https://coveralls.io/github/Zooz/api-contract-validator?branch=master)
-[![Known Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/Zooz/api-contract-validator.svg)](https://snyk.io/test/github/Zooz/api-contract-validator?targetFile=package.json)
+<!-- [![npm](https://img.shields.io/npm/v/camelHumps.svg)](https://www.npmjs.com/package/camelHumps)
+[![Build Status](https://img.shields.io/travis/Zooz/camelHumps.svg)](https://travis-ci.org/Zooz/camelHumps)
+[![Coverage Status](https://img.shields.io/coveralls/github/Zooz/camelHumps.svg)](https://coveralls.io/github/Zooz/camelHumps?branch=master)
+[![Known Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/Zooz/camelHumps.svg)](https://snyk.io/test/github/Zooz/camelHumps?targetFile=package.json)
 ![style](https://img.shields.io/badge/code%20style-airbnb-ff5a5f.svg)
-![NPM](https://img.shields.io/npm/l/api-contract-validator.svg) -->
+![NPM](https://img.shields.io/npm/l/camelHumps.svg) -->
 
 Allow accessing object with snake_case property names using camelCase property names
 
@@ -13,13 +13,10 @@ Allow accessing object with snake_case property names using camelCase property n
 One example is whenever you'd like to seamlessly destructure or access an API request or response that are described in _snake_case_,
 by using _camelCase_ for having a consistent code
 
-## Why choosing _camel-humps_ over other similar packages?
-Basically camel-humps utilizes NodeJS Proxy class and doesn't deep-clone the original object as other similar packages do.
+## Why choosing _camelHumps_ over other similar packages?
+Basically camelHumps utilizes NodeJS Proxy class and doesn't deep-clone the original object as other similar packages do.
 
-Which results in:
-
-:white_check_mark:
-Quick to initialize
+Which results in
 
 :white_check_mark:
 No overhead of deep-cloning objects
@@ -31,14 +28,29 @@ Minimal effect on memory footprint
 Applied only to fields that have being accessed
 
 :white_check_mark:
-Original object can be mutated 
+Supports both snake_case and kebab-case
+
+:white_check_mark:
+Can mutate the original object 
 :scream:
+
+## API
+### camelHumps(obj, options)
+
+### options:
+- kebab (false) - given object properties are in kebeb-case
 
 ## Usage
 ```js
-const camelHumps = require('camel-humps');
+const camelHumps = require('camelHumps');
 ```
 
+```js
+const snakeObj = camelHumps(obj); // for snake_case
+const kebabObj = camelHumps(obj, {kebeb: true}); // for kebab-case
+```
+
+## Examples
 ```js
 const body = fetchData('/313');
 console.info(body);
