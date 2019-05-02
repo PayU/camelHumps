@@ -7,7 +7,10 @@
     "src"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test:coverage": "nyc npm test",
+    "lint": "eslint lib",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -26,8 +29,22 @@
     "url": "https://github.com/Zooz/camelHumps/issues"
   },
   "homepage": "https://github.com/Zooz/camelHumps#readme",
+  "nyc": {
+    "check-coverage": true,
+    "lines": 95,
+    "statements": 95,
+    "functions": 95,
+    "branches": 95,
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "cache": true,
+    "all": true
+  },
   "devDependencies": {
     "chai": "^4.2.0",
+    "coveralls": "^3.0.3",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
