@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 
-const camelHumps = require('../src');
+const camelHumps = require('../lib');
 
 it('Should non-object value back', () => {
   expect(camelHumps('string')).to.eql('string');
