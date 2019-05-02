@@ -1,11 +1,13 @@
 const { expect } = require('chai');
 
-const camelHumps = require('../lib');
+const camelHumps = require('../src');
 
-it('Should non-object value back', () => {
-  expect(camelHumps('string')).to.eql('string');
-  expect(camelHumps(undefined)).to.eql(undefined);
-  expect(camelHumps(321)).to.eql(321);
+describe('non-object value', () => {
+  it('Should be returned', () => {
+    expect(camelHumps('string')).to.eql('string');
+    expect(camelHumps(undefined)).to.eql(undefined);
+    expect(camelHumps(321)).to.eql(321);
+  });
 });
 
 describe('Getting values', () => {

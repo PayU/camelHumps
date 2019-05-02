@@ -4,12 +4,13 @@
   "description": "Allow accessing object with snake_case property names using camelCase names",
   "main": "src/index.js",
   "files": [
-    "lib"
+    "src"
   ],
   "scripts": {
     "test": "mocha",
     "test:coverage": "nyc npm test",
-    "lint": "eslint lib",
+    "lint": "eslint src",
+    "build": "webpack",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
@@ -20,8 +21,10 @@
     "object",
     "camel",
     "snake",
+    "kebab",
     "camel-case",
-    "snake-case"
+    "snake-case",
+    "kebab-case"
   ],
   "author": "Kobi Carmeli",
   "license": "Apache-2.0",
@@ -43,6 +46,10 @@
     "all": true
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "^8.0.5",
     "chai": "^4.2.0",
     "coveralls": "^3.0.3",
     "eslint": "^5.16.0",
@@ -51,6 +58,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "mocha": "^6.1.4",
-    "nyc": "^14.0.0"
+    "nyc": "^14.0.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
   }
 }

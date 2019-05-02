@@ -33,6 +33,11 @@ Supports both snake_case and kebab-case
 Can mutate the original object 
 :scream:
 
+## Install
+```bash
+npm i camel-humps
+```
+
 ## API
 ### camelHumps(obj, options)
 
