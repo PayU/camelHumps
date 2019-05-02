@@ -1,5 +1,3 @@
-# camelHumps
-
 [![npm](https://img.shields.io/npm/v/camel-humps.svg)](https://www.npmjs.com/package/camel-humps)
 [![Build Status](https://travis-ci.org/Zooz/camelHumps.svg?branch=master)](https://travis-ci.org/Zooz/camelHumps)
 [![Coverage Status](https://coveralls.io/repos/github/Zooz/camelHumps/badge.svg?branch=master)](https://coveralls.io/github/Zooz/camelHumps?branch=master)
@@ -7,6 +5,7 @@
 ![style](https://img.shields.io/badge/code%20style-airbnb-ff5a5f.svg)
 ![NPM](https://img.shields.io/npm/l/camel-humps.svg)
 
+# camelHumps
 Allow accessing object with snake_case property names using camelCase property names
 
 ## Why do I need it?
