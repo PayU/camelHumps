@@ -1,5 +1,5 @@
 {
-  "name": "camelHumps",
+  "name": "camel-humps",
   "version": "1.0.0",
   "description": "Allow accessing object with snake_case property names using camelCase names",
   "main": "src/index.js",
