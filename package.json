@@ -4,7 +4,7 @@
   "description": "Allow accessing object with snake_case property names using camelCase names",
   "main": "src/index.js",
   "files": [
-    "src"
+    "lib"
   ],
   "scripts": {
     "test": "mocha",
