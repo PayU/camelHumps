@@ -5,8 +5,8 @@ function camelize(obj, options = {}) {
 
   const { kebab } = options;
 
-  const toSnakeCase = str => str.replace(camelPattern, match => `_${match.toLowerCase()}`);
-  const toKebabCase = str => str.replace(camelPattern, match => `-${match.toLowerCase()}`);
+  const toSnakeCase = (str) => str.replace(camelPattern, (match) => `_${match.toLowerCase()}`);
+  const toKebabCase = (str) => str.replace(camelPattern, (match) => `-${match.toLowerCase()}`);
 
   return new Proxy(obj, {
     get: (target, camelCaseKey) => {
