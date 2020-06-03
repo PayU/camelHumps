@@ -1,6 +1,6 @@
 {
   "name": "camel-humps",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Allow accessing object with snake_case property names using camelCase names",
   "main": "src/index.js",
   "files": [
