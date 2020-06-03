@@ -5,8 +5,8 @@ function camelize(obj, options = {}) {
 
   const { kebab } = options;
 
-  const toSnakeCase = str => str.replace(camelPattern, match => `_${match.toLowerCase()}`);
-  const toKebabCase = str => str.replace(camelPattern, match => `-${match.toLowerCase()}`);
+  const toSnakeCase = (str) => str.replace(camelPattern, (match) => `_${match.toLowerCase()}`);
+  const toKebabCase = (str) => str.replace(camelPattern, (match) => `-${match.toLowerCase()}`);
 
   return new Proxy(obj, {
     get: (target, camelCaseKey) => {
@@ -23,13 +23,18 @@ function camelize(obj, options = {}) {
         const snakeCaseKey = toSnakeCase(camelCaseKey);
         return target[snakeCaseKey] instanceof Object
           ? camelize(target[snakeCaseKey])
-          : target[snakeCaseKey];
+          : target[camelCaseKey] || target[snakeCaseKey];
       }
     },
     set: (target, camelCaseKey, value) => {
       const snakeCaseKey = kebab === true ? toKebabCase(camelCaseKey) : toSnakeCase(camelCaseKey);
-      // eslint-disable-next-line no-param-reassign
-      target[snakeCaseKey] = value;
+      if (target[camelCaseKey] != null) {
+        // eslint-disable-next-line no-param-reassign
+        target[camelCaseKey] = value;
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target[snakeCaseKey] = value;
+      }
       return true;
     },
   });

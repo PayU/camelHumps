@@ -40,6 +40,40 @@ describe('Getting values', () => {
     });
   });
 
+  describe('camelCase', () => {
+    const snakeCaseBody = {
+      character_details: {
+        first_name: 'Jon',
+        last_name: 'Snow',
+        motherName: 'Liana',
+      },
+      birthPlace: 'Tower of Joy',
+    };
+
+    it('Get root property', () => {
+      const { birthPlace, characterDetails } = camelHumps(snakeCaseBody);
+      expect(characterDetails).to.eql({
+        first_name: 'Jon',
+        last_name: 'Snow',
+        motherName: 'Liana',
+      });
+      expect(birthPlace).to.eql('Tower of Joy');
+    });
+
+    it('Get nested properties', () => {
+      const camelBody = camelHumps(snakeCaseBody);
+
+      const { characterDetails } = camelBody;
+      const { firstName, lastName, motherName } = characterDetails;
+      expect(firstName).to.eql('Jon');
+      expect(lastName).to.eql('Snow');
+      expect(motherName).to.eql('Liana');
+
+      expect(camelBody.characterDetails.lastName).to.eql('Snow');
+    });
+  });
+
+
   describe('kebab-case', () => {
     const kebabCaseBody = {
       'character-details': {
@@ -95,6 +129,40 @@ describe('Setting values', () => {
       camelBody.characterDetails.lastName = 'Stark';
       expect(body.character_details.first_name).to.eql('Arya');
       expect(body.character_details.last_name).to.eql('Stark');
+    });
+  });
+
+  describe('camelCase', () => {
+    const body = {
+      character_details: {
+        first_name: 'Jon',
+        last_name: 'Snow',
+        motherName: 'Liana',
+      },
+      birthPlace: 'Tower of Joy',
+    };
+
+    it('Setting root property', () => {
+      const camelBody = camelHumps(body);
+
+      camelBody.birthPlace = 'Winterfel';
+      expect(body.birthPlace).to.eql('Winterfel');
+    });
+
+    it('Setting nested property', () => {
+      const camelBody = camelHumps(body);
+
+      camelBody.characterDetails.firstName = 'Arya';
+      camelBody.characterDetails.lastName = 'Stark';
+      camelBody.characterDetails.motherName = 'Unknown';
+      expect(body.character_details.first_name).to.eql('Arya');
+      expect(body.character_details.last_name).to.eql('Stark');
+      expect(body.character_details.motherName).to.eql('Unknown');
+      expect(body.character_details).to.eql({
+        first_name: 'Arya',
+        last_name: 'Stark',
+        motherName: 'Unknown',
+      });
     });
   });
 
