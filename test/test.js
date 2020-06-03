@@ -158,6 +158,11 @@ describe('Setting values', () => {
       expect(body.character_details.first_name).to.eql('Arya');
       expect(body.character_details.last_name).to.eql('Stark');
       expect(body.character_details.motherName).to.eql('Unknown');
+      expect(body.character_details).to.eql({
+        first_name: 'Arya',
+        last_name: 'Stark',
+        motherName: 'Unknown',
+      });
     });
   });
 
